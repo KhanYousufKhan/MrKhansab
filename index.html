@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(255, 34, 145);
+            overflow: hidden;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+            justify-content: center;
+            animation: scaleAnimation 5s ease-in-out infinite;
+            transform-origin: 50% 50%;
+        }
+
+        p {
+            text-align: center;
+            font-size: 30px;
+            white-space: pre-line;
+            overflow: hidden;
+            animation: typingAnimation 20s steps(40, end) forwards; /* Set animation fill-mode to forwards */
+            border-right: 2px solid black; /* Simulate a cursor */
+            margin: 0;
+            display: inline-block;
+        }
+
+        @keyframes scaleAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes typingAnimation {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Tahniyath Fatima, Tfathi, Tahniyath- To My Dear future Better Half......❤️❤️❤️❤️❤️
+    </h1>
+
+    <p id="loveMessage"></p>
+
+    <script>
+        // Simulate typing effect using JavaScript
+        var loveMessage = document.getElementById('loveMessage');
+        var messageText = `As we started Our journey On 1st April 2023, We are about to complete a year, Just making this reminder for you that you are so special for me, & to make you feel special this shayari is for you.......
+        
+        "Tum meri zindagi ka sukoon ho, 
+        Dil mein basi hai teri muskan ka jaadu. 
+        Tere bina kuch bhi nahi lagta,
+        Tu meri roshni, tu meri raah ka hawaa."`;
+
+        function typeMessage(index) {
+            loveMessage.innerHTML += messageText.charAt(index);
+            index++;
+            if (index < messageText.length) {
+                setTimeout(function () {
+                    typeMessage(index);
+                }, 50); // Adjust the typing speed (milliseconds)
+            } else {
+                // Animation is complete, add any post-animation logic here
+            }
+        }
+
+        // Trigger the typing effect
+        typeMessage(0);
+    </script>
+</body>
+</html>
